@@ -1,7 +1,7 @@
 from flask import Flask, request, redirect, jsonify, render_template, send_from_directory
 import stripe
 
-stripe.api_key = 'sk_test_51R4ZJnEoMIWuvDFypaQiXwHRQ2KWza88tObaNFOK3djUYR5OYVeWwARehOMDGuYevvt2MqiQqPJBvKGnkG1rzBBi00w4VI9jeS'
+stripe.api_key = 'STRIPE API KEY'
 
 app = Flask(__name__, static_folder="public", template_folder="public")
 
@@ -18,7 +18,7 @@ def create_checkout_session():
             payment_method_types=["card"],
             line_items=[
                 {
-                    "price": "price_1R4ZiqEoMIWuvDFyorwH8rCv",  # Use your new price ID
+                    "price": "price_key",  # Use your new price ID
                     "quantity": 1,
                 },
             ],

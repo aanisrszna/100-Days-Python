@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <section>
+        <div class="product">
+            <img src="https://ecommercephotographyindia.com/info/wp-content/uploads/2022/02/Beauty-product-photography-placement.jpg" alt="Phillip's Product" />
+            <div class="description">
+                <h3>New Trend Makeup Product</h3>
+                <h5>RM250</h5>
+            </div>
+        </div>
+        <button id="checkout-button">Checkout</button>
+    </section>
+
+    <script>
+        document.getElementById("checkout-button").addEventListener("click", async () => {
+            const response = await fetch("/create-checkout-session", { method: "POST" });
+            const session = await response.json();
+            if (session.url) {
+                window.location.href = session.url;
+            } else {
+                alert("Error: " + session.error);
+            }
+        });
+    </script>
+</body>
+</html>

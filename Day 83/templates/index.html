@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anis Ruszanna | Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <div class="container">
+            <h1 class="logo">Anis Ruszanna</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+        <!-- Hero Section --><!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-image">
+                <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Anis Ruszanna" class="profile-pic">
+            </div>
+            <div class="hero-content">
+                <h2>Hello, I'm <span>Anis Ruszanna</span></h2>
+
+                <div class="hero-details">
+                    <p><i class="fas fa-code"></i> Software Developer</p>
+                    <p><i class="fas fa-envelope"></i> anisruszannarosli01@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> 017-4757964</p>
+                    <p><i class="fab fa-linkedin"></i>
+                        <a href="https://www.linkedin.com/in/anis-ruszanna" target="_blank">LinkedIn Profile</a>
+                    </p>
+                    <p><i class="fab fa-github"></i>
+                        <a href="https://github.com/aanisrszna" target="_blank">GitHub Profile</a>
+                    </p>
+                </div>
+
+                <a href="#contact" class="btn">Let's Connect</a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- About Me Section -->
+    <!-- About Me Section -->
+    <section id="about" class="section">
+        <div class="container about-container">
+            <div class="about-text">
+                <h2>About Me</h2>
+                    <p>
+                        Hi! I'm <b>Anis Ruszanna</b>, a Software Engineer with a <b>3.91 CGPA</b> in my Bachelor's degree, specializing in Angular, Laravel, OutSystems, and PHP.
+                        I develop user-friendly web applications that enhance business processes. 💻 Currently, I’m working on <b>E-Leave Manager</b> at River Raven Sdn Bhd to optimize HR operations.
+                        <br><br>My past work includes <b>eFatwaInsight</b>, a <b>Gold Award-winning</b> project at the 9th Ie-RIICH program. 🏆
+                        Recognized for my achievements, including multiple <b>Dean’s List</b> awards, I thrive in innovative environments. 📚
+                        Passionate about **system development, web technologies, and data analytics**, I continuously explore new advancements and embrace learning opportunities.
+                        Let’s connect and build something amazing together! 🚀
+                    </p>
+
+            </div>
+            <div class="about-image">
+                <img src="{{ url_for('static', filename='images/about.jpg') }}" alt="Anis Ruszanna">
+            </div>
+        </div>
+    </section>
+
+            <!-- Education -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="education-wrapper">
+                <!-- Left Logo -->
+                <img src="{{ url_for('static', filename='images/logo1.jpg') }}" alt="UPSI Logo" class="education-logo">
+
+                <div class="education-content">
+                    <div class="education-item">
+                        <h3>Universiti Pendidikan Sultan Idris, Tanjong Malim, Perak</h3>
+                        <p><strong>Bachelor of Software Engineering (Software Education)</strong> - August 2024</p>
+                        <p>Grade: 3.90 | Dean’s List for 7 Semesters out of 8</p>
+                    </div>
+                    <div class="education-item">
+                        <h3>Kolej Matrikulasi Pulau Pinang, Kepala Batas, Penang</h3>
+                        <p><strong>Science (Module 2) – 2 Semester System</strong> - May 2020</p>
+                        <p>Grade: 3.64 | MUET: Band 4</p>
+                    </div>
+                </div>
+
+                <!-- Right Logo -->
+                <img src="{{ url_for('static', filename='images/logo2.jpeg') }}" alt="KMPP Logo" class="education-logo">
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+        <!-- Projects -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>🔹 E-Leave Manager</h3>
+                    <p>Developed a PHP-based leave management system to streamline HR processes and workflow automation.</p>
+                </div>
+                <div class="project-card">
+                    <h3>🔹 Droid Mobile View</h3>
+                    <p>Built the STDS Viewer Module using Ionic and Angular, enhancing UI/UX and integrating APIs with Swagger.</p>
+                </div>
+                <div class="project-card">
+                    <h3>🔹 Tanjung Piai E-Book Library</h3>
+                    <p>Designed wireframes and prototypes in Figma to ensure a seamless and user-friendly interface.</p>
+                </div>
+                <div class="project-card">
+                    <h3>🔹 Outsync Innovators</h3>
+                    <p>Developed front-end applications using OutSystems and completed Service Studio 11 training.</p>
+                </div>
+                <div class="project-card">
+                    <h3>🔹 EFatwaInsight</h3>
+                    <p>Created a Laravel-based fatwa management system to improve accessibility and document organization.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2>Skills & Technologies</h2>
+            <div class="skills-grid">
+                <span>Laravel</span>
+                <span>Angular</span>
+                <span>Outsystems</span>
+                <span>Electron</span>
+                <span>JavaScript</span>
+                <span>TypeScript</span>
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>PHP</span>
+                <span>SQL</span>
+                <span>C++</span>
+                <span>Python</span>
+                <span>Figma</span>
+                <span>Miro</span>
+                <span>Canva</span>
+                <span>Visual Studio Code</span>
+                <span>Laragon</span>
+                <span>PyCharm</span>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <!-- Contact -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form onsubmit="sendWhatsAppMessage(); return false;">
+                <input type="text" id="name" placeholder="Enter your full name" required>
+                <input type="email" id="email" placeholder="Enter your email address" required>
+                <textarea id="message" placeholder="Write your message here..." required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+    function sendWhatsAppMessage() {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let message = document.getElementById("message").value;
+
+        let phoneNumber = "60174757964"; // Your WhatsApp number (Malaysia country code: 60)
+        let whatsappURL = `https://wa.me/${phoneNumber}?text=Hello Anis!%0A%0AMy name is ${name}%0A${message}`;
+
+        window.open(whatsappURL, "_blank");
+    }
+    </script>
+
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Anis Ruszanna | Built with Flask & Python</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+
+</body>
+</html>

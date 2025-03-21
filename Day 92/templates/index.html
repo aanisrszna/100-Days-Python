@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Color Extractor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Image Color Extractor</h1>
+        <p>Upload an image to extract the <strong>10 most common colors</strong>.</p>
+
+        <div class="upload-box">
+            <input type="file" id="imageInput" accept="image/*">
+            <label for="imageInput" class="upload-btn">Choose an Image</label>
+            <button onclick="uploadImage()">Extract Colors</button>
+        </div>
+
+        <div id="imagePreview"></div>
+        <div id="colorsContainer"></div>
+    </div>
+
+    <script>
+        function uploadImage() {
+            let input = document.getElementById("imageInput").files[0];
+            if (!input) {
+                alert("Please select an image first.");
+                return;
+            }
+
+            let formData = new FormData();
+            formData.append("image", input);
+
+            fetch("/upload", { method: "POST", body: formData })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        alert("Error: " + data.error);
+                        return;
+                    }
+                    displayImage(input);
+                    displayColors(data.colors);
+                })
+                .catch(error => console.error("Error:", error));
+        }
+
+        function displayImage(file) {
+            let reader = new FileReader();
+            reader.onload = function(e) {
+                let imagePreview = document.getElementById("imagePreview");
+                imagePreview.innerHTML = `<img src="${e.target.result}" alt="Uploaded Image">`;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function displayColors(colors) {
+            let container = document.getElementById("colorsContainer");
+            container.innerHTML = "";
+            colors.forEach(color => {
+                let div = document.createElement("div");
+                div.className = "color-box";
+                div.style.backgroundColor = color;
+                div.innerHTML = `<span>${color}</span>`;
+                container.appendChild(div);
+            });
+        }
+    </script>
+</body>
+<footer>
+    <p>&copy; 2025 Anis Ruszanna. All rights reserved.</p>
+</footer>
+
+</html>

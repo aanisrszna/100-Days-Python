@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafes with Wifi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <h1>📍 Cafes with Wifi and Good Coffee</h1>
+
+    <!-- Add New Cafe Form (At the Top) -->
+    <h2>Add a New Cafe</h2>
+    <form method="POST">
+        <input type="text" name="name" placeholder="Cafe Name" required>
+        <input type="url" name="map_url" placeholder="Google Maps URL" required>
+        <input type="url" name="img_url" placeholder="Image URL" required>
+        <input type="text" name="location" placeholder="Location" required>
+        <label><input type="checkbox" name="has_sockets"> Has Sockets</label>
+        <label><input type="checkbox" name="has_toilet"> Has Toilet</label>
+        <label><input type="checkbox" name="has_wifi"> Has WiFi</label>
+        <label><input type="checkbox" name="can_take_calls"> Can Take Calls</label>
+        <input type="text" name="seats" placeholder="Seats Available">
+        <input type="text" name="coffee_price" placeholder="Coffee Price">
+        <button type="submit">Add Cafe</button>
+    </form>
+
+    <!-- Cafe Table -->
+    <h2>Available Cafes</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Map</th>
+                <th>Sockets</th>
+                <th>Toilet</th>
+                <th>WiFi</th>
+                <th>Calls</th>
+                <th>Seats</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cafe in cafes %}
+            <tr>
+                <td><img src="{{ cafe[3] }}" alt="Cafe Image"></td>
+                <td>{{ cafe[1] }}</td>
+                <td>{{ cafe[4] }}</td>
+                <td><a href="{{ cafe[2] }}" target="_blank">📍 Open Map</a></td>
+                <td>{{ '✅' if cafe[5] else '❌' }}</td>
+                <td>{{ '✅' if cafe[6] else '❌' }}</td>
+                <td>{{ '✅' if cafe[7] else '❌' }}</td>
+                <td>{{ '✅' if cafe[8] else '❌' }}</td>
+                <td>{{ cafe[9] }}</td>
+                <td>{{ cafe[10] }}</td>
+<!--                <td>-->
+<!--                    <a href="{{ url_for('delete', cafe_id=cafe[0]) }}" class="delete-btn">🗑 Delete</a>-->
+<!--                </td>-->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>

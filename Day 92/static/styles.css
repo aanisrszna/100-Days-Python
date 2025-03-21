@@ -1,0 +1,94 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background-color: #f0f2f5;
+    padding: 40px;
+}
+
+/* Container Card */
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Upload Box */
+.upload-box {
+    margin-top: 20px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.upload-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #3498db;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-right: 10px;
+}
+
+.upload-btn:hover {
+    background: #2980b9;
+}
+
+button {
+    display: block;
+    margin: 15px auto;
+    padding: 12px 20px;
+    font-size: 16px;
+    background: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #27ae60;
+}
+
+/* Image Preview */
+#imagePreview img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Colors Display */
+#colorsContainer {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Color Box */
+.color-box {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    transition: transform 0.2s ease;
+}
+
+.color-box:hover {
+    transform: scale(1.1);
+}
